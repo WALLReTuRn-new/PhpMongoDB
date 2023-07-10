@@ -73,7 +73,7 @@ $registry = new \WebSiteToYou\System\Library\Registry();
 $registry->set('autoloader', $autoloader);
 
 //MongoDb
-$MongoDb = new \WebSiteToYou\System\Library\DB(DRIVER, HOSTNAME, DATABASE, PORT);
+$MongoDb = new \WebSiteToYou\System\Library\DB(DRIVER, HOSTNAME, DATABASE, USERNAME, PASSWORD,PORT);
 $registry->set('MongoDb', $MongoDb);
 
 class index {

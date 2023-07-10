@@ -21,11 +21,11 @@ class DB {
      * @param	int		$port
      *
      */
-    public function __construct(string $adaptor, string $hostname, string $database, string $port = '') {
+    public function __construct(string $adaptor, string $hostname, string $database, string $username, string $password ,string $port = '') {
         $class = 'WebSiteToYou\System\Library\DB\\' . $adaptor;
 
         if (class_exists($class)) {
-            $this->adaptor = new $class($hostname, $database, $port);
+            $this->adaptor = new $class($hostname, $database, $username, $password,$port);
         } else {
             throw new \Exception('Error: Could not load database adaptor ' . $adaptor . '!');
         }
@@ -50,20 +50,20 @@ class DB {
 
         return $this->adaptor->update($collection, $where, $collectionQuery);
     }
-    
-    public function updateMany(string $collection, $where,$collectionQuery = []): mixed {
+
+    public function updateMany(string $collection, $where, $collectionQuery = []): mixed {
 
         return $this->adaptor->updateMany($collection, $where, $collectionQuery);
     }
-    
+
     public function delete(string $collection, $where = []): mixed {
 
         return $this->adaptor->delete($collection, $where);
     }
+
     public function deleteMany(string $collection, $where = []): mixed {
 
         return $this->adaptor->deleteMany($collection, $where);
     }
-    
 
 }

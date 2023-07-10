@@ -14,8 +14,8 @@ define('DIR_SYSTEM', DIR_APP . 'system/');
 // DB
 define('DRIVER', 'mongodb');
 define('HOSTNAME', 'localhost');
-define('USERNAME', '');
-define('PASSWORD', '');
+define('USERNAME', 'root');
+define('PASSWORD', 'mongodb');
 define('DATABASE', 'MongoDb');
 define('PORT', '27017');
 define('PREFIX', '');

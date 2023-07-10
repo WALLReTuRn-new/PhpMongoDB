@@ -39,6 +39,8 @@ Install PHP: Download and install PHP on your computer. You can find installatio
 
 Install MongoDB: Install MongoDB on your computer by following the instructions provided in the official MongoDB documentation. Make sure you have a running MongoDB instance that your PHP application can connect to.
 
+Install MongoDB Shell Download: Install MongoDB on your computer by following the instructions provided in the official MongoDB documentation. Make sure you have a running MongoDB instance that your PHP application can connect to.
+
 Clone the Project: Clone the project repository to your local machine using Git or download the project source code as a ZIP file and extract it.
 
 Configure MongoDB Connection: In the project directory, locate the configuration files such as config.php or .env file and update the MongoDB connection settings (hostname, port, credentials, etc.) according to your local setup.

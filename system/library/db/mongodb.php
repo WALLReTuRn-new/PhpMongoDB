@@ -14,13 +14,14 @@ class MongoDb {
     private $db;
     private $checkDatabase;
 
-    public function __construct(string $hostname, string $database, string $port = '') {
+    public function __construct(string $hostname, string $database, string $username, string $password, string $port = '') {
         if (!$port) {
             $port = '27017';
         }
 
         $this->db = $database;
-        $this->connectionClient = new \MongoDB\Client('mongodb://' . $hostname . ':' . $port);
+       
+        $this->connectionClient = new \MongoDB\Client('mongodb://' . $username . ':' . $password . '@' . $hostname . ':' . $port.'/?authSource='.$this->db);
 
         try {
 
@@ -32,7 +33,8 @@ class MongoDb {
 
             try {
                 $this->checkDatabase();
-                $this->connection = new \MongoDB\Driver\Manager('mongodb://' . $hostname . ':' . $port);
+                
+                $this->connection = new \MongoDB\Driver\Manager('mongodb://' . $username . ':' . $password . '@' . $hostname . ':' . $port.'/?authSource='.$this->db);
             } catch (\Exception $exc) {
                 echo $exc->getMessage();
             }
