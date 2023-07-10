@@ -1,0 +1,6 @@
+{
+    "require": {
+        "twig/twig":"^2.0",
+        "mongodb/mongodb": "^1.16"
+    }
+}
